@@ -32,12 +32,14 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbY = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.lbX = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lbY = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +64,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.lbX);
             this.tabPage1.Controls.Add(this.lbY);
             this.tabPage1.Controls.Add(this.textBox1);
@@ -74,14 +77,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "AutoSendKey";
             // 
-            // groupBox1
+            // lbX
             // 
-            this.groupBox1.Location = new System.Drawing.Point(8, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "sendText";
+            this.lbX.AutoSize = true;
+            this.lbX.Location = new System.Drawing.Point(262, 189);
+            this.lbX.Name = "lbX";
+            this.lbX.Size = new System.Drawing.Size(35, 13);
+            this.lbX.TabIndex = 0;
+            this.lbX.Text = "label1";
             // 
             // lbY
             // 
@@ -91,6 +94,13 @@
             this.lbY.Size = new System.Drawing.Size(35, 13);
             this.lbY.TabIndex = 0;
             this.lbY.Text = "label1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(265, 131);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(210, 20);
+            this.textBox1.TabIndex = 2;
             // 
             // button1
             // 
@@ -102,14 +112,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lbX
+            // groupBox1
             // 
-            this.lbX.AutoSize = true;
-            this.lbX.Location = new System.Drawing.Point(262, 189);
-            this.lbX.Name = "lbX";
-            this.lbX.Size = new System.Drawing.Size(35, 13);
-            this.lbX.TabIndex = 0;
-            this.lbX.Text = "label1";
+            this.groupBox1.Location = new System.Drawing.Point(8, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "sendText";
             // 
             // tabPage2
             // 
@@ -121,12 +131,20 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // notifyIcon1
             // 
-            this.textBox1.Location = new System.Drawing.Point(265, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 20);
-            this.textBox1.TabIndex = 2;
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(525, 24);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(110, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Show NotifyIcon";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -156,6 +174,8 @@
         private System.Windows.Forms.Label lbY;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

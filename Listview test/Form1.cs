@@ -24,6 +24,14 @@ namespace Listview_test
         private void Form1_Load(object sender, EventArgs e)
         {
             
+            notifyIcon1.ShowBalloonTip(1000);
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            notifyIcon1.Visible = true;
+            notifyIcon1.ShowBalloonTip(1000);
         }
     }
 }

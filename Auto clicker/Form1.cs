@@ -62,5 +62,13 @@ namespace Auto_clicker
             lbX.Text = Cursor.Position.X.ToString();
             lbY.Text = Cursor.Position.Y.ToString();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            notifyIcon1.Text = "Hello world";
+            notifyIcon1.BalloonTipText = "Balloon tip text";
+            notifyIcon1.BalloonTipTitle = "balloon tip title";
+            notifyIcon1.ShowBalloonTip(1000);
+        }
     }
 }

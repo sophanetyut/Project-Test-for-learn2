@@ -13,6 +13,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Runtime;
+using System.ComponentModel;
+using System.Configuration;
+using System.Windows.Interop;
+using System.Windows.Forms;
 
 namespace ClinicWPFTest
 {
@@ -25,30 +30,15 @@ namespace ClinicWPFTest
         {
             InitializeComponent();
         }
-        Thread tr;
-        int id = 0;
 
-        private void btnStart_Click(object sender, RoutedEventArgs e)
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-            tr = new Thread(new ThreadStart(Doom));
-            tr.Start();
-            lbShow.Content = "Started for " + id;
-            id++;
-            Thread.Sleep(1000);
-            lbShow.Content = "Started for " + id;
-        }
-
-
-        private void Doom()
-        {
-            for (int i = 0; i < 20; i++)
+            if (DatePick1.SelectedDate.Value.Date <  DateTime.Now.Date)
             {
-                Console.Beep();
-                Thread.Sleep(1000);
+                System.Windows.MessageBox.Show(DateTime.Now.Date + "\n" + DatePick1.SelectedDate.Value.Date);
+                DatePick1.SelectedDate = null;
+                DatePick1.Focus();
             }
         }
-        
-
     }
 }
