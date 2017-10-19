@@ -32,6 +32,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.lbX = new System.Windows.Forms.Label();
             this.lbY = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -39,14 +40,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -65,10 +69,7 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.lbX);
-            this.tabPage1.Controls.Add(this.lbY);
             this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -77,10 +78,20 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "AutoSendKey";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(525, 24);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(110, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Show NotifyIcon";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // lbX
             // 
             this.lbX.AutoSize = true;
-            this.lbX.Location = new System.Drawing.Point(262, 189);
+            this.lbX.Location = new System.Drawing.Point(6, 28);
             this.lbX.Name = "lbX";
             this.lbX.Size = new System.Drawing.Size(35, 13);
             this.lbX.TabIndex = 0;
@@ -89,7 +100,7 @@
             // lbY
             // 
             this.lbY.AutoSize = true;
-            this.lbY.Location = new System.Drawing.Point(318, 189);
+            this.lbY.Location = new System.Drawing.Point(47, 28);
             this.lbY.Name = "lbY";
             this.lbY.Size = new System.Drawing.Size(35, 13);
             this.lbY.TabIndex = 0;
@@ -104,22 +115,29 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(400, 179);
+            this.button1.Location = new System.Drawing.Point(113, 28);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(119, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "start";
+            this.button1.Text = "get position";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.lbX);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lbY);
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.Size = new System.Drawing.Size(251, 160);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "sendText";
+            this.groupBox1.Text = "click";
             // 
             // tabPage2
             // 
@@ -136,15 +154,41 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // button2
+            // button4
             // 
-            this.button2.Location = new System.Drawing.Point(525, 24);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Show NotifyIcon";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button4.Location = new System.Drawing.Point(9, 107);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(73, 23);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Start";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(122, 107);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Stop";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "milisecond click";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(113, 61);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(119, 20);
+            this.textBox2.TabIndex = 2;
             // 
             // Form1
             // 
@@ -160,6 +204,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -176,6 +222,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

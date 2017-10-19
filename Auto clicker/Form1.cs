@@ -39,14 +39,11 @@ namespace Auto_clicker
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             
-            click++;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-
-            SetCursorPos(0, 0);
+            SetCursorPos(int.Parse( lbX.Text),int.Parse( lbY.Text));
             mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
             mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
         }
@@ -54,7 +51,6 @@ namespace Auto_clicker
         private void Form1_Load(object sender, EventArgs e)
         {
             
-            timer1.Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,6 +65,18 @@ namespace Auto_clicker
             notifyIcon1.BalloonTipText = "Balloon tip text";
             notifyIcon1.BalloonTipTitle = "balloon tip title";
             notifyIcon1.ShowBalloonTip(1000);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            timer1.Interval = int.Parse(textBox2.Text);
+            timer1.Start();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
         }
     }
 }

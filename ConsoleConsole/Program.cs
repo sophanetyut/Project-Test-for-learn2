@@ -21,19 +21,28 @@ namespace ConsoleConsole
     {
         
         static void Main(string[] args)
-        {           
-            Console.WriteLine("សួរស្តី");
-            ShockwaveFlash s = new ShockwaveFlash();
-            try
+        {
+            while (true)
             {
-                s.Movie = "https://www.youtube.com/v/NwL98zzdEXo?autoplay=1";
-
+                Console.WriteLine("Input condition");
+                string s = Console.ReadLine();
+                if (s == "Install All")
+                {
+                    Console.WriteLine("function install all is working");
+                }
+                else if (s == "Install only one")
+                {
+                    Console.WriteLine("function install only one is working");
+                }
+                else if (s == "exit")
+                {
+                    Console.WriteLine("function exit the application");
+                }
+                else {
+                    Console.WriteLine("Keyword incorrect");
+                }
+               
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            Console.ReadKey();
         }
 
 
@@ -58,5 +67,21 @@ namespace ConsoleConsole
             }
             return "KM"+num;
         }
+
+
+//        Console.WriteLine("សួរស្តី");
+//            ShockwaveFlash s = new ShockwaveFlash();
+//            try
+//            {
+//                s.Movie = "https://www.youtube.com/v/NwL98zzdEXo?autoplay=1";
+
+//            }
+//            catch (Exception ex)
+//            {
+//                Console.WriteLine(ex.Message);
+//            }
+//Console.ReadKey();
     }
+
+
 }
